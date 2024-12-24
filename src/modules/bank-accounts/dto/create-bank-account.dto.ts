@@ -1,1 +1,27 @@
-export class CreateBankAccountDto {}
+import {
+  IsEnum,
+  IsHexColor,
+  IsNotEmpty,
+  IsNumber,
+  IsString,
+} from 'class-validator';
+import { BankAccountType } from '../entities/BankAccount';
+
+export class CreateBankAccountDto {
+  @IsString()
+  @IsNotEmpty()
+  name: string;
+
+  @IsNumber()
+  @IsNotEmpty()
+  initialBalance: number;
+
+  @IsNotEmpty()
+  @IsEnum(BankAccountType)
+  type: BankAccountType;
+
+  @IsHexColor()
+  color: string;
+
+  transaction: string[];
+}
