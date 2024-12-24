@@ -14,7 +14,7 @@ export class BankAccountsRepository {
     return this.prismaService.bankAccount.findMany(findManyDto);
   }
 
-  findFirsts(findFirstDto: Prisma.BankAccountFindFirstArgs) {
+  findFirst(findFirstDto: Prisma.BankAccountFindFirstArgs) {
     return this.prismaService.bankAccount.findFirst(findFirstDto);
   }
 

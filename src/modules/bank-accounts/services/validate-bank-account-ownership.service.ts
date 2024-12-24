@@ -6,7 +6,7 @@ export class ValidateBankAccountOwnershipService {
   constructor(private readonly bankAccountsRepo: BankAccountsRepository) {}
 
   async validate(userId: string, bankAccountId: string) {
-    const isOwner = await this.bankAccountsRepo.findFirsts({
+    const isOwner = await this.bankAccountsRepo.findFirst({
       where: { userId, id: bankAccountId },
     });
 
